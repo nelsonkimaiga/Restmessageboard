@@ -13,6 +13,7 @@ body {
     font-family: 'Raleway', serif;
     color: #666;
     text-align: center;
+    background-color: #161646;
 }
 
 h1,
@@ -32,3 +33,6 @@ h6 {
   margin-left: auto;
 }
 
+.labels{
+    color: #FFF;
+}
