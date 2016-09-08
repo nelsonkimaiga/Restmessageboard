@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
     <head>
-        <title></title>
+        <title>Rest Message Board</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/foundation.css">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
     </head>
     <body>
         <script type="text/javascript">
             function getXmlHttpRequest() {
                 try
                 {
-                    // Firefox, Opera 8.0+, Safari
+                    
                     return new XMLHttpRequest();
                 }
                 catch (e)
                 {
-                    // Internet Explorer
+                    
                     try
                     {
                         return new ActiveXObject("Msxml2.XMLHTTP");
@@ -110,25 +112,32 @@
 
 
         </script>
+        
+        <h1>Message Board</h1>
+        <div class="container">
+            <div class="row">
+                <div class="large-6 large-centered columns">
+                    <form name="form0">
+                        <button type="button" class="button primary" name="GET0" onclick="getMessages()">LIST ALL MESSAGES</button>
+                    </form>
+                    <br>
+                    <form name="form1">
+                        <fieldset>
+                            <label>Message id#:</label>
+                            <input type="text" name="messageNumber">
+                        </fieldset>
+                        <button type="button" class="button success" name="GET1" onclick="getMessage(document.form1.messageNumber.value)">GET MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-        <h1>MessageBoard sample</h1>
-
-        <form name="form0">
-
-            <button type="button" name="GET0" onclick="getMessages()">LIST ALL MESSAGES</button>
-            
-        </form>
 
 
-        <form name="form1">
-            Message id#: <input style="width: 4em" type="text" name="messageNumber" />
 
-<button type="button" name="GET1" onclick="getMessage(document.form1.messageNumber.value)">GET MESSAGE</button>
-            
-</form>
 
 <form name="form2">
-    Message id#: <input style="width: 4em" type="text" name="messageNumber" />
+    Message id#: <input type="text" name="messageNumber" />
 
 <button type="button" name="GET2" onclick="deleteMessage(document.form2.messageNumber.value)">DELETE MESSAGE</button>
     
@@ -153,6 +162,8 @@
     getMessages();
 </script>
 
-
-</body>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/vendor/jquery.js"></script>
+    </body>
 </html>
